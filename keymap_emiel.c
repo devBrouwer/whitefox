@@ -39,30 +39,30 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN0,NO,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,     UP,  PGDN,\
         LCTL,LGUI,LALT,               SPC,           RALT,FN1,NO,     LEFT,DOWN,RGHT \
     ),
-    /* Layer 1: Shift Action Layer so shift-esc is ~
+	/* Layer 1: Dvorak-layer
      * ,---------------------------------------------------------------.
-     * | ` |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+     * |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
      * |---------------------------------------------------------------|
-     * |     |   |   |   |   |   |   |   |   |   |   |   |   |     |   |
+     * |     | ' | , | . | P | Y | F | G | C | R | L | / | = |     |   |
      * |---------------------------------------------------------------|
-     * |      |   |   |   |   |   |   |   |   |   |   |   |NO|     |   |
+     * |      | A | O | E | U | I | D | H | T  |N |S  |-  |NO|     |   |
      * |---------------------------------------------------------------|
-     * |    |NO |   |   |   |   |   |   |   |   |   |   |      |   |   |
+     * |    |NO | ; | Q | J | X | B | M | W | V | Z |   |      |   |   |
      * |---------------------------------------------------------------|
      * |    |    |    |                    |   |   |   | NO|   |   |   |
      * `---------------------------------------------------------------'
      */
-	[1] = KEYMAP( \
-        GRV, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS,TRNS, \
-        TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,TRNS,    TRNS,TRNS,TRNS \
+    [1] = KEYMAP( \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\
+        TRNS,QUOT,COMM,DOT , P  , Y  , F  , G  , C  , R  , L  ,BSLS,EQL ,TRNS,    TRNS, \
+        TRNS, A  , O  , E  , U  , I  , D  , H  , T  , N  , S  ,MINS,TRNS,TRNS,    TRNS, \
+        TRNS,TRNS,SCLN, Q  , J  , K  , X  , B  , M  , W  , V  , Z  ,TRNS,    PGUP,TRNS, \
+        TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,TRNS,    HOME,PGDN,END  \
     ),
 	/* Layer 2: FN-layer
      * ,---------------------------------------------------------------.
      * | ` | F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|VoM|Vo-|Vo+|
-    *  |---------------------------------------------------------------|
+     * |---------------------------------------------------------------|
      * |     |   |   |   |   |   |HM |PD |PU |END|   |   |   | DEL |   |
      * |---------------------------------------------------------------|
      * |      |   |   |   |   |   | <-| DN| UP |->|   |   |NO|     |   |
@@ -79,30 +79,32 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    PGUP,FN2, \
         TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,TRNS,    HOME,PGDN,END  \
     ),
-	/* Layer 3: Dvorak-layer
+	/* Layer 3: Shift Action Layer so shift-esc is ~
      * ,---------------------------------------------------------------.
-     * |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
-    *  |---------------------------------------------------------------|
-     * |     | ' | , | . | P | Y | F | G | C | R | L | / | = |     |   |
+     * | ` |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
      * |---------------------------------------------------------------|
-     * |      | A | O | E | U | I | D | H | T  |N |S  |-  |NO|     |   |
+     * |     |   |   |   |   |   |   |   |   |   |   |   |   |     |   |
      * |---------------------------------------------------------------|
-     * |    |NO | ; | Q | J | X | B | M | W | V | Z |   |      |   |   |
+     * |      |   |   |   |   |   |   |   |   |   |   |   |NO|     |   |
+     * |---------------------------------------------------------------|
+     * |    |NO |   |   |   |   |   |   |   |   |   |   |      |   |   |
      * |---------------------------------------------------------------|
      * |    |    |    |                    |   |   |   | NO|   |   |   |
      * `---------------------------------------------------------------'
      */
-    [3] = KEYMAP( \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\
-        TRNS,QUOT,COMM,DOT , P  , Y  , F  , G  , C  , R  , L  ,BSLS,EQL ,TRNS,    TRNS, \
-        TRNS, A  , O  , E  , U  , I  , D  , H  , T  , N  , S  ,MINS,TRNS,TRNS,    TRNS, \
-        TRNS,TRNS,SCLN, Q  , J  , K  , X  , B  , M  , W  , V  , Z  ,TRNS,    PGUP,TRNS, \
-        TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,TRNS,    HOME,PGDN,END  \
+	[3] = KEYMAP( \
+        GRV, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS,TRNS, \
+        TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,TRNS,    TRNS,TRNS,TRNS \
     ),
+	
+	
 };
 
 const uint16_t fn_actions[] = {
-    [0] = ACTION_LAYER_MODS(1, MOD_LSFT),
+    [0] = ACTION_LAYER_MODS(3, MOD_LSFT),
     [1] = ACTION_LAYER_MOMENTARY(2),
-	[2] = ACTION_LAYER_TOGGLE(3)
+	[2] = ACTION_LAYER_TOGGLE(1)
 };

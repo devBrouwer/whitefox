@@ -25,19 +25,19 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|Del| 15 keys
      * |---------------------------------------------------------------|
-     * | FN1  |  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '|Enter   |PgU| 12k, NO, 2k
+     * | FN2  |  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '|Enter   |PgU| 12k, NO, 2k
      * |---------------------------------------------------------------| 
-     * |  FN0   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift |Up |PgD| 1k, NO, 13k
+     * |  FN3   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift |Up |PgD| 1k, NO, 13k
      * |---------------------------------------------------------------|
-     * |Ctl |Gui |Alt |         Space         |Alt |FN1 |  |Lef|Dow|Rig| 6k, NO, 3k
+     * |Ctl |Gui |Alt |         Space         |Alt |FN2 |  |Lef|Dow|Rig| 6k, NO, 3k
      * `---------------------------------------------------------------'
      */
     [0] = KEYMAP( \
         ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, INS,\
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC,     DEL,\
-        FN1,  A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,NO,ENT,     PGUP,\
-        FN0,NO,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,     UP,  PGDN,\
-        LCTL,LGUI,LALT,               SPC,           RALT,FN1,NO,     LEFT,DOWN,RGHT \
+        FN2,  A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,NO,ENT,     PGUP,\
+        FN3,NO,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,     UP,  PGDN,\
+        LCTL,LGUI,LALT,               SPC,           RALT,FN2,NO,     LEFT,DOWN,RGHT \
     ),
 	/* Layer 1: Dvorak-layer
      * ,---------------------------------------------------------------.
@@ -67,7 +67,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * |      |   |   |   |   |   | <-| DN| UP |->|   |   |NO|     |   |
      * |---------------------------------------------------------------|
-     * |    |NO |   |   |   |   |   |   |   |   |   |   |      | PU|FN2|
+     * |    |NO |   |   |   |   |   |   |   |   |   |   |      | PU|FN1|
      * |---------------------------------------------------------------|
      * |    |    |    |                    |   |   |   | NO| HM| PD|END|
      * `---------------------------------------------------------------'
@@ -76,7 +76,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, MUTE,VOLD,VOLU,\
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,PGUP,END ,TRNS,TRNS,TRNS,DEL ,    TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,LEFT,DOWN, UP ,RGHT,TRNS,TRNS,TRNS,TRNS,    TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    PGUP,FN2, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    PGUP,FN1, \
         TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,TRNS,    HOME,PGDN,END  \
     ),
 	/* Layer 3: Shift Action Layer so shift-esc is ~
@@ -104,7 +104,8 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const uint16_t fn_actions[] = {
-    [0] = ACTION_LAYER_MODS(3, MOD_LSFT),
-    [1] = ACTION_LAYER_MOMENTARY(2),
-	[2] = ACTION_LAYER_TOGGLE(1)
+    [0] = ACTION_LAYER_MODS(0, MOD_LCTL),
+	[1] = ACTION_LAYER_TOGGLE(1),
+	[2] = ACTION_LAYER_MOMENTARY(2),
+	[3] = ACTION_LAYER_MODS(3, MOD_LSFT),
 };

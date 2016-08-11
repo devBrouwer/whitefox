@@ -20,7 +20,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------| 
      * |  FN2   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift |Up |FN2| 1k, 13k
      * |---------------------------------------------------------------|
-     * |Ctl |Gui |Alt |         Space         |Alt |FN5 |_|Lef|Dow|Rig| 6k, 3k
+     * |Ctl |Alt |Gui |         Space         |Alt |FN5 |_|Lef|Dow|Rig| 6k, 3k
      * `---------------------------------------------------------------'
      */
     [0] = KEYMAP( \
@@ -28,7 +28,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC,     DEL,\
         FN6,  A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,ENT,     MPLY,\
         FN2,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,     UP,  SLCK,\
-        LCTL,LGUI,LALT,               SPC,           RALT,FN6,     LEFT,DOWN,RGHT \
+        LCTL,LALT,LGUI,               SPC,           RALT,FN6,     LEFT,DOWN,RGHT \
     ),
 	//----------------------------------------------------------------------------------------
 	/* Layer 1: Dvorak-layer
@@ -62,24 +62,24 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS,TRNS, \
         TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,    TRNS,TRNS,TRNS \
     ),
-	//disable windows key
+	//disable windows key and normal shift behaviour, for windows gaming
 	[3] = KEYMAP( \
         TRNS, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS,TRNS, \
-        TRNS,NO,TRNS,               TRNS,          TRNS,TRNS,    TRNS,TRNS,TRNS \
+        LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS,TRNS, \
+        TRNS,TRNS,NO,               TRNS,          TRNS,TRNS,    TRNS,TRNS,TRNS \
     ),
-	//swap windows and alt
+	//swap windows and alt, to the more traditional positions
 	[4] = KEYMAP( \
 	TRNS, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS,TRNS, \
-        TRNS,LALT,LGUI,               TRNS,          TRNS,TRNS,    TRNS,TRNS,TRNS \
+        TRNS,LGUI,LALT,               TRNS,          TRNS,TRNS,    TRNS,TRNS,TRNS \
     ),
 	
-    //normal shift
+    //normal shift, for gaming
     [5] = KEYMAP( \
 	TRNS, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
@@ -98,7 +98,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * |         |   |   |   |   |MPRV|MPLY|MNXT|   |   |      | PU|FN1|
      * |---------------------------------------------------------------|
-     * |    |FN3|FN4|                    |   |   |   |___| HM| PD|END|
+     * |    |FN4|FN3|                    |   |   |   |___| HM| PD|END|
      * `---------------------------------------------------------------'
      */
     [6] = KEYMAP( \
@@ -106,10 +106,8 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,PGUP,END ,TRNS,TRNS,TRNS,DEL ,    TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,LEFT,DOWN, UP ,RGHT,TRNS,TRNS,TRNS,    TRNS, \
         FN5,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    PGUP,FN1, \
-        TRNS,FN3,FN4,               TRNS,          TRNS,TRNS,    HOME,PGDN,END  \
+        TRNS,FN4,FN3,               TRNS,          TRNS,TRNS,    HOME,PGDN,END  \
     ),
-
-	
 	
 };
 

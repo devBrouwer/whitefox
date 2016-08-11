@@ -26,9 +26,9 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = KEYMAP( \
         ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, F12,\
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC,     DEL,\
-        FN5,  A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,ENT,     MPLY,\
+        FN6,  A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,ENT,     MPLY,\
         FN2,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,     UP,  SLCK,\
-        LCTL,LGUI,LALT,               SPC,           RALT,FN5,     LEFT,DOWN,RGHT \
+        LCTL,LGUI,LALT,               SPC,           RALT,FN6,     LEFT,DOWN,RGHT \
     ),
 	//----------------------------------------------------------------------------------------
 	/* Layer 1: Dvorak-layer
@@ -78,7 +78,16 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS,TRNS, \
         TRNS,LALT,LGUI,               TRNS,          TRNS,TRNS,    TRNS,TRNS,TRNS \
     ),
-	//----------------------------------------------------------------------------------------
+	
+    //normal shift
+    [5] = KEYMAP( \
+	TRNS, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
+        LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS,TRNS, \
+        TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,    TRNS,TRNS,TRNS \
+    ),
+    //----------------------------------------------------------------------------------------
 	/* FN-layer
      * ,---------------------------------------------------------------.
      * | ` | F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|VoM|Vo-|Vo+|
@@ -92,20 +101,12 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |    |FN3|FN4|                    |   |   |   |___| HM| PD|END|
      * `---------------------------------------------------------------'
      */
-    [5] = KEYMAP( \
+    [6] = KEYMAP( \
         GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, MUTE,VOLD,VOLU,\
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,PGUP,END ,TRNS,TRNS,TRNS,DEL ,    TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,LEFT,DOWN, UP ,RGHT,TRNS,TRNS,TRNS,    TRNS, \
-        FN6,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    PGUP,FN1, \
+        FN5,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    PGUP,FN1, \
         TRNS,FN3,FN4,               TRNS,          TRNS,TRNS,    HOME,PGDN,END  \
-    ),
-    //normal shift
-    [6] = KEYMAP( \
-	TRNS, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS, \
-        LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,    TRNS,TRNS, \
-        TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,    TRNS,TRNS,TRNS \
     ),
 
 	
@@ -118,6 +119,6 @@ const uint16_t fn_actions[] = {
 	[2] = ACTION_LAYER_MODS(2, MOD_LSFT),
 	[3] = ACTION_LAYER_TOGGLE(3),
 	[4] = ACTION_LAYER_TOGGLE(4),
-	[5] = ACTION_LAYER_MOMENTARY(5),
-	[6] = ACTION_LAYER_TOGGLE(6)
+	[5] = ACTION_LAYER_TOGGLE(5),
+	[6] = ACTION_LAYER_MOMENTARY(6),
 };

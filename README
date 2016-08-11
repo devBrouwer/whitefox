@@ -11,15 +11,20 @@ It is based on flabbergast's TMK/chibios See this.
 
     https://github.com/flabbergast/tmk_keyboard/tree/chibios/tmk_core/protocol/chibios
 
+Build Dependencies
+------------------
+arm-none-eabi-gcc arm-none-eabi-newlib dfu-util
 
 Build
 -----
 $ git clone https://github.com/tmk/whitefox.git
 $ cd whitefox
 $ git submodule update --init --recursive
-$ make
+$ make KEYMAP=name
 
+for the KEYMAP=name you need this keymap_name.c file to exist. You can leave
+it of and the default keymap_plain.c is used.
 
 Upload
 ------
-$ make program
+$ make program KEYMAP=name

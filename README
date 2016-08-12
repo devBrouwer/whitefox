@@ -27,4 +27,4 @@ it of and the default keymap_plain.c is used.
 
 Upload
 ------
-$ make program KEYMAP=name
+# make program KEYMAP=name
